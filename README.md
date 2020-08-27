@@ -4,6 +4,8 @@ Driverless skip list implementation from the skip list cookbook provided in proj
 
 Skip list is used to store messages with access-control list.
 
+Custom System Calls
+-------------------
 mbx_init - This system call is implemented using an overhead function in skip_list.c. The function returns a skip list pointer to the newly initialized skip list. The maximum number of levels and probability to add an additional level are passed in form the syscall and the member variables are set for the struct. Head contains an id with the maximum value for long. This is used as a sentinel. The forward pointer, as well as the random number are initialized. Level is set to one and size to 0. Returns a pointer to the skip list.
 
 mbx_shutdown - This system call is implemented using an overhead function in skip_list.c. The function calls another  helper function to destroy individual nodes. This helper function calls another helper function to destroy individual messages. Returns 0 or 1 based on success.
